@@ -1,13 +1,11 @@
 <h1>Posts</h1>
 
 <ul>
-  <% if @posts %>
     <% @posts.each do |post| %>
-        <li>
-        <a href="/posts/<%= post.id %>">
-            <%= post.title %>
-        </a>
-        </li>
+        <li><% if user_signed_in? %>
+            <p><%= post.user.email %> said:</p>
+        <% end %>
+        <h3><%= post.title %></h3>
+        <p><%= post.body %></li></p>
     <% end %>
-  <% end %> 
 </ul>

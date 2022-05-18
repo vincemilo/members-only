@@ -1,1 +1,11 @@
 <h1>New</h1>
+
+<div data-turbo="false">
+<%= form_with(model: @post) do |form| %>
+      <%= form.label :title %>
+      <%= form.text_field :title %>
+      <%= form.label :body %>
+      <%= form.text_field :body %>
+      <%= form.submit %>
+<% end %>
+</div>
